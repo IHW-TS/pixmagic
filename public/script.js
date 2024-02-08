@@ -15,9 +15,18 @@ function searchImages() {
     });
 }
 
+
 function sendImage(imageUrl) {
-    // Appeler le backend pour envoyer l'URL de l'image
-    $.post('/sendImage', {imageUrl: imageUrl}, function(response) {
-        alert('Image envoyée avec succès !');
+    $.ajax({
+        url: '/sendImage',
+        type: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify({ imageUrl: imageUrl }),
+        success: function(response) {
+            alert('Image envoyée avec succès !');
+        },
+        error: function(xhr, status, error) {
+            alert('Un problème est survenu lors de l\'envoi de l\'image.');
+        }
     });
 }
