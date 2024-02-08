@@ -1,4 +1,4 @@
-
+require('dotenv').config();
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -9,11 +9,16 @@ const app = express();
 // Configuration pour parser le corps des requêtes en JSON
 app.use(bodyParser.json());
 
-// Serve static files from the 'public' directory
 app.use(express.static('public'));
 
+// Cette route envoie la clé API au client
+app.get('/api-key', (req, res) => {
+    res.json({ apiKey: process.env.PIXABAY_API_KEY });
+});
+
+
 // Remplacez ceci par l'URL de votre webhook Discord
-const discordWebhookUrl = 'https://discord.com/api/webhooks/1205073769626992671/jh9J2IM1URxMOb5SVn7P2QjDndvoii9TqMrTEmFxMes1kfz09NfjAtwhmslT2KfORgnn';
+const discordWebhookUrl = process.env.DISCORD_WEBHOOK_URL;
 
 app.post('/sendImage', (req, res) => {
     const imageUrl = req.body.imageUrl;

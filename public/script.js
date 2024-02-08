@@ -1,6 +1,18 @@
-var API_KEY = '42270049-19cdd498052c795101bfa3060';
+let API_KEY = '';
+
+function fetchApiKey() {
+    $.getJSON('/api-key', function(data) {
+        API_KEY = data.apiKey;
+    }).fail(function() {
+        console.log("Erreur lors de la récupération de la clé API.");
+    });
+}
 
 function searchImages() {
+    if (!API_KEY) {
+        alert("La clé API n'est pas encore chargée.");
+        return;
+    }
     var query = document.getElementById('searchQuery').value;
     var URL = "https://pixabay.com/api/?key=" + API_KEY + "&q=" + encodeURIComponent(query);
     $.getJSON(URL, function(data) {
@@ -15,18 +27,5 @@ function searchImages() {
     });
 }
 
-
-function sendImage(imageUrl) {
-    $.ajax({
-        url: '/sendImage',
-        type: 'POST',
-        contentType: 'application/json',
-        data: JSON.stringify({ imageUrl: imageUrl }),
-        success: function(response) {
-            alert('Image envoyée avec succès !');
-        },
-        error: function(xhr, status, error) {
-            alert('Un problème est survenu lors de l\'envoi de l\'image.');
-        }
-    });
-}
+// Appel initial pour récupérer la clé API
+fetchApiKey();
