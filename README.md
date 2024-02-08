@@ -41,11 +41,12 @@ DISCORD_WEBHOOK_URL=<votre_webhook_url_discord>
 Une fois le serveur démarré, ouvrez votre navigateur et allez à http://localhost:5500 pour commencer à utiliser l'application.
 
 Construit avec :
-Node.js
-Express
-Axios
-Pixabay API
-
+```bash
+- Node.js
+- Express
+- Axios
+- Pixabay API
+```
 ## Contribuer
 
 Les contributions sont ce qui rend la communauté open source un lieu d'apprentissage, d'inspiration et de créativité. Toutes les contributions sont grandement appréciées.
