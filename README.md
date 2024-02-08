@@ -50,9 +50,10 @@ Construit avec :
 ## Contribuer
 
 Les contributions sont ce qui rend la communauté open source un lieu d'apprentissage, d'inspiration et de créativité. Toutes les contributions sont grandement appréciées.
-
-Forkez le projet
-Créez votre branche de fonctionnalité (git checkout -b feature/AmazingFeature)
-Committez vos changements (git commit -m 'Add some AmazingFeature')
-Poussez votre branche (git push origin feature/AmazingFeature)
-Ouvrez une Pull Request
+```bash
+- Forkez le projet
+- Créez votre branche de fonctionnalité (git checkout -b feature/AmazingFeature)
+- Committez vos changements (git commit -m 'Add some AmazingFeature')
+- Poussez votre branche (git push origin feature/AmazingFeature)
+- Ouvrez une Pull Request
+```
