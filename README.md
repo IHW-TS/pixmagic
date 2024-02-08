@@ -29,3 +29,29 @@ npm install
 # Démarrez le serveur
 npm start
 ```
+## Configuration
+
+Créez un fichier .env dans le dossier racine du projet et ajoutez les clés d'API nécessaires :
+```bash
+PIXABAY_API_KEY=<votre_clé_api_pixabay>
+DISCORD_WEBHOOK_URL=<votre_webhook_url_discord>
+```
+## Utilisation
+
+Une fois le serveur démarré, ouvrez votre navigateur et allez à http://localhost:5500 pour commencer à utiliser l'application.
+
+Construit avec :
+Node.js
+Express
+Axios
+Pixabay API
+
+## Contribuer
+
+Les contributions sont ce qui rend la communauté open source un lieu d'apprentissage, d'inspiration et de créativité. Toutes les contributions sont grandement appréciées.
+
+Forkez le projet
+Créez votre branche de fonctionnalité (git checkout -b feature/AmazingFeature)
+Committez vos changements (git commit -m 'Add some AmazingFeature')
+Poussez votre branche (git push origin feature/AmazingFeature)
+Ouvrez une Pull Request
