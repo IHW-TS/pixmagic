@@ -21,7 +21,13 @@ app.get('/api-key', (req, res) => {
 const discordWebhookUrl = process.env.DISCORD_WEBHOOK_URL;
 
 app.post('/sendImage', (req, res) => {
+    console.log('Corps de la requête reçue:', req.body); // Ajoutez cette ligne pour le débogage
     const imageUrl = req.body.imageUrl;
+    if (!imageUrl) {
+        console.error('Erreur : l\'URL de l\'image est undefined.');
+        res.status(400).send('L\'URL de l\'image est undefined.');
+        return;
+    }
     const message = {
         content: `Voici votre image sélectionnée : ${imageUrl}`
     };
