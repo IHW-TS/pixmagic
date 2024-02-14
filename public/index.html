@@ -1,11 +1,73 @@
+<!-- FILEPATH: /c:/Users/TAT/Documents/Github/pixmagic/public/index.html -->
 <!DOCTYPE html>
 <html>
 <head>
     <title>Choix d'image Pixabay</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .search-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #searchQuery {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        #searchButton {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #results {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .image-card {
+            width: 200px;
+            margin: 10px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-    <input type="text" id="searchQuery" placeholder="Recherchez des images...">
-    <button onclick="searchImages()">Rechercher</button>
+    <h1>Choix d'image Pixabay</h1>
+    <div class="search-container">
+        <input type="text" id="searchQuery" placeholder="Recherchez des images...">
+        <button id="searchButton" onclick="searchImages()">Rechercher</button>
+    </div>
     <div id="results"></div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
